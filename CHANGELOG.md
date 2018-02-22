@@ -1,3 +1,14 @@
+<a name="1.1.3"></a>
+## 1.1.3 (2018-02-22)
+
+* Fix release message ([669777e](https://github.com/microlinkhq/nanoclamp/commit/669777e))
+* Release react-microlink@1.1.2 ([2745a17](https://github.com/microlinkhq/nanoclamp/commit/2745a17))
+* Update README.md ([784ab03](https://github.com/microlinkhq/nanoclamp/commit/784ab03))
+* Update README.md ([d5a8450](https://github.com/microlinkhq/nanoclamp/commit/d5a8450))
+* Update README.md ([99aec90](https://github.com/microlinkhq/nanoclamp/commit/99aec90))
+
+
+
 <a name="1.1.2"></a>
 ## 1.1.2 (2018-02-22)
 
