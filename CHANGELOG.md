@@ -1,3 +1,12 @@
+<a name="1.1.4"></a>
+## 1.1.4 (2018-02-22)
+
+* Avoid umd bundle ([2ee8675](https://github.com/microlinkhq/nanoclamp/commit/2ee8675))
+* Update README.md ([afa2348](https://github.com/microlinkhq/nanoclamp/commit/afa2348))
+* Update README.md ([b7f4670](https://github.com/microlinkhq/nanoclamp/commit/b7f4670))
+
+
+
 <a name="1.1.3"></a>
 ## 1.1.3 (2018-02-22)
 
