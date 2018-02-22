@@ -100,7 +100,7 @@ NanoClamp.defaultProps = {
   is: 'div',
   lines: 3,
   ellipsis: '…',
-  debounce: 200
+  debounce: 300
 }
 
 NanoClamp.propTypes = {
