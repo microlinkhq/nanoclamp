@@ -2,7 +2,7 @@
 
 ###### [Storybook](https://nanoclamp.netlify.com/)
 
-> Responsive text clamping component.
+> Responsive text clamping component. Inspired in [react-clamp-lines](https://github.com/zoltantothcom/react-clamp-lines) but smaller (~1KB).
 
 ## Features
  - built for `React` with no dependencies
