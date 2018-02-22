@@ -2,13 +2,7 @@
 
 ###### [Storybook](https://nanoclamp.netlify.com/)
 
-> Responsive text clamping component. Inspired in [react-clamp-lines](https://github.com/zoltantothcom/react-clamp-lines) but smaller (~1KB).
-
-## Features
- - built for `React` with no dependencies
- - customizable CSS classes
- - responsive
- - window resize event `debounced` &mdash; and [why it's important](https://davidwalsh.name/javascript-debounce-function)
+> Responsive text clamping component. Inspired by [react-clamp-lines](https://github.com/zoltantothcom/react-clamp-lines), but smaller (~1KB).
 
 ## Install
 
@@ -22,9 +16,10 @@ npm install nanoclamp --save
 import NanoClamp from 'nanoclamp';
 
 <NanoClamp
-  text={'Some text to clamp.'}
-  lines="4"
   className="custom-class"
+  is="p"
+  lines="4"
+  text={'Some text to clamp.'}
 />
 
 ```
@@ -33,10 +28,10 @@ import NanoClamp from 'nanoclamp';
 
 prop | type | default&#160;value | description |
 -----|------|--------------------|-------------|
-text | `string` |  | Text you wish to clamp
-lines | `number` | `3` | Number of visible lines
 className | `string` |  | CSS classname(s) added to the string
 is | `string` | `'div'` | DOM selector used to render the string
+lines | `number` | `3` | Number of visible lines
+text | `string` |  | Text you wish to clamp
 
 ## License
 
