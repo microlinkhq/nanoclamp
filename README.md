@@ -1,5 +1,10 @@
 # nanoclamp
 
+![Last version](https://img.shields.io/github/tag/microlinkhq/nanoclamp.svg?style=flat-square)
+[![Build Status](https://img.shields.io/travis/microlinkhq/nanoclamp/master.svg?style=flat-square)](https://travis-ci.org/microlinkhq/nanoclamp)
+[![Dependency Status](https://david-dm.org/microlinkhq/nanoclamp.svg?path=packages/metascraper&style=flat-square)](https://david-dm.org/microlinkhq/nanoclamp?path=packages/metascraper)
+[![NPM Status](https://img.shields.io/npm/dm/nanoclamp.svg?style=flat-square)](https://www.npmjs.org/package/metascraper)
+
 ###### [Storybook](https://nanoclamp.netlify.com/)
 
 > Responsive text clamping component. Inspired by [react-clamp-lines](https://github.com/zoltantothcom/react-clamp-lines), but smaller (~1KB).
