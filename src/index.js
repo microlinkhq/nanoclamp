@@ -1,10 +1,8 @@
-import React, {createElement, PureComponent} from 'react'
+import {createElement, Component} from 'react'
 import PropTypes from 'prop-types'
 
-const ELLIPSIS = '...'
-
-class NanoClamp extends PureComponent {
-  constructor(props) {
+class NanoClamp extends Component {
+  constructor (props) {
     super(props)
 
     this.state = {
@@ -21,114 +19,96 @@ class NanoClamp extends PureComponent {
     this.debounced = this.debounce(this.action)
   }
 
-  componentDidMount() {
+  componentDidMount () {
+    window.addEventListener('resize', this.debounced)
     if (this.props.text) {
       this.lineHeight = this.element.clientHeight + 1
       this.clampLines()
-
-      window.addEventListener('resize', this.debounced)
     }
   }
 
-  componentWillUnmount() {
+  componentWillUnmount () {
     window.removeEventListener('resize', this.debounced)
   }
 
-  debounce(func) {
+  debounce (func) {
     let timeout
 
     return () => {
-      const context = this
       const later = () => {
         timeout = null
-        func.apply(context)
+        func.apply(this)
       }
       const callNow = !timeout
       clearTimeout(timeout)
-      timeout = setTimeout(later, 200)
-      if (callNow) func.apply(context)
+      timeout = setTimeout(later, this.props.debounce)
+      if (callNow) func.apply(this)
     }
   }
 
-  action() {
+  action () {
     this.setState({noClamp: false}, this.clampLines)
   }
 
-  clampLines() {
-    this.setState({text: ''}, () => {
-      const maxHeight = this.lineHeight * this.props.lines + 1
+  clampLines () {
+    const maxHeight = this.lineHeight * this.props.lines + 1
 
-      this.start = 0
-      this.middle = 0
-      this.end = this.original.length
+    this.start = 0
+    this.middle = 0
+    this.end = this.original.length
 
-      while (this.start <= this.end) {
-        this.middle = Math.floor((this.start + this.end) / 2)
-        this.element.innerText = this.original.slice(0, this.middle)
-        if (this.middle === this.original.length) {
-          this.setState({
-            text: this.original,
-            noClamp: true
-          })
-          return
-        }
+    while (this.start <= this.end) {
+      this.middle = Math.floor((this.start + this.end) / 2)
+      this.element.innerText = this.original.slice(0, this.middle)
 
-        this.moveMarkers(maxHeight)
+      if (this.middle === this.original.length) {
+        this.setState({ text: this.original, noClamp: true })
+        return
       }
 
-      this.setState(
-        () => {
-          const slicedString = this.original.slice(0, this.middle - 5)
-          const text = slicedString.trim() + ELLIPSIS
-          return {
-            text
-          }
-        },
-        () => {
-          this.element.innerText = this.state.text
-        }
-      )
-    })
-  }
-
-  moveMarkers(maxHeight) {
-    if (this.element.clientHeight <= maxHeight) {
-      this.start = this.middle + 1
-    } else {
-      this.end = this.middle - 1
+      this.moveMarkers(maxHeight)
     }
+
+    this.setState(
+      () => {
+        const slicedString = this.original.slice(0, this.middle - 5)
+        const text = slicedString.trim() + this.props.ellipsis
+        return { text }
+      },
+      () => {
+        this.element.innerText = this.state.text
+      }
+    )
   }
 
-  render() {
-    const {className, is, text: propText} = this.props
+  moveMarkers (maxHeight) {
+    if (this.element.clientHeight <= maxHeight) this.start = this.middle + 1
+    else this.end = this.middle - 1
+  }
+
+  render () {
+    const {is, text: propText, lines, debounce, ellipsis, ...props} = this.props
     const {text} = this.state
 
-    if (!propText) {
-      return null
-    }
-
-    const props = {
-      className,
-      ref: e => {
-        this.element = e
-      }
-    }
-
-    return createElement(is, props, text)
+    return propText
+      ? createElement(is, { ref: node => (this.element = node), ...props }, text)
+      : null
   }
 }
 
 NanoClamp.defaultProps = {
-  className: '',
   is: 'div',
-  lines: 3
+  lines: 3,
+  ellipsis: '…',
+  debounce: 300
 }
 
 NanoClamp.propTypes = {
-  className: PropTypes.string,
   is: PropTypes.string,
   lines: PropTypes.number,
-  text: PropTypes.string.isRequired
+  debounce: PropTypes.number,
+  text: PropTypes.string.isRequired,
+  ellipsis: PropTypes.string
 }
 
 export default NanoClamp
