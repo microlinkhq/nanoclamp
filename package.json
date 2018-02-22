@@ -4,6 +4,7 @@
   "homepage": "https://github.com/microlinkhq/nanoclamp",
   "version": "1.1.3",
   "main": "lib/index.js",
+  "module": "lib/index.m.js",
   "author": {
     "name": "Brad Adams"
   },
@@ -53,7 +54,7 @@
     "build": "npm run build:babel && npm run build:microbundle",
     "build-storybook": "build-storybook",
     "build:babel": "NODE_ENV=production BABEL_ENV=production babel src -d lib",
-    "build:microbundle": "NODE_ENV=production microbundle build --target browser --entry lib/index.js",
+    "build:microbundle": "NODE_ENV=production microbundle build --target browser --entry lib/index.js --format es,cjs",
     "dev": "start-storybook -p 6006",
     "lint": "standard-markdown && standard src stories",
     "pretest": "npm run lint",
