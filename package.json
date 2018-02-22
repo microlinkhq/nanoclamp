@@ -36,6 +36,8 @@
     "babel-preset-env": "latest",
     "babel-preset-react": "latest",
     "eslint-plugin-jsx-a11y": "latest",
+    "husky": "latest",
+    "lint-staged": "latest",
     "microbundle": "latest",
     "prettier-standard": "latest",
     "prop-types": "latest",
@@ -76,12 +78,12 @@
       "React",
       "fetch"
     ],
-    "ignore": [
-      "/lib/"
-    ],
     "parser": "babel-eslint",
     "plugins": [
       "jsx-a11y"
+    ],
+    "ignore": [
+      "/lib/"
     ]
   }
 }
