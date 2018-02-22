@@ -36,9 +36,12 @@
     "babel-preset-react": "latest",
     "eslint-plugin-jsx-a11y": "latest",
     "microbundle": "latest",
+    "prettier-standard": "latest",
     "prop-types": "latest",
     "react": "^16",
-    "react-dom": "^16"
+    "react-dom": "^16",
+    "standard": "latest",
+    "standard-markdown": "latest"
   },
   "engines": {
     "node": ">= 8"
