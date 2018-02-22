@@ -53,7 +53,7 @@
     "build:microbundle": "NODE_ENV=production microbundle build --target browser --entry lib/index.js",
     "dev": "start-storybook -p 6006",
     "lint": "standard-markdown && standard src stories",
-    "pretest": "npm run lint && npm run update",
+    "pretest": "npm run lint",
     "pretty": "prettier-standard index.js {core,test,bin}/**/*.js --single-quote",
     "test": "exit 0"
   },
