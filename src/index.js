@@ -57,7 +57,7 @@ class NanoClamp extends Component {
 
     this.start = 0
     this.middle = 0
-    this.end = this.original.length - ellipsisLength
+    this.end = this.original.length
 
     while (this.start <= this.end) {
       this.middle = Math.floor((this.start + this.end) / 2)
@@ -70,7 +70,7 @@ class NanoClamp extends Component {
 
       this.moveMarkers(maxHeight)
     }
-    const text = this.original.slice(0, this.middle - ellipsisLength).trim() + ellipsis
+    const text = this.original.slice(0, Math.max(this.middle - ellipsisLength, 0)).trim() + ellipsis
 
     this.setState({text}, () => {
       this.element.innerText = this.state.text
