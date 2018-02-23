@@ -1,4 +1,4 @@
-# nanoclamp
+# nanoclamp 🗜
 
 ![Last version](https://img.shields.io/github/tag/microlinkhq/nanoclamp.svg?style=flat-square)
 [![Build Status](https://img.shields.io/travis/microlinkhq/nanoclamp/master.svg?style=flat-square)](https://travis-ci.org/microlinkhq/nanoclamp)
@@ -31,9 +31,11 @@ import NanoClamp from 'nanoclamp';
 
 ## API
 
-prop | type | default&#160;value | description |
+prop | type | default | description |
 -----|------|--------------------|-------------|
 className | `string` |  | CSS classname(s) added to the string
+debounce | `number` | `300` | Time in milliseconds used for debounce
+ellipsis | `string` | `'…'` | String displayed after the clamped `text`
 is | `string` | `'div'` | DOM selector used to render the string
 lines | `number` | `3` | Number of visible lines
 text | `string` |  | Text you wish to clamp
