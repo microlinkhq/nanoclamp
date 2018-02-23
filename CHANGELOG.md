@@ -1,3 +1,10 @@
+<a name="1.2.1"></a>
+## <small>1.2.1 (2018-02-23)</small>
+
+* Fix unnecessary clamping ([af92865](https://github.com/microlinkhq/nanoclamp/commit/af92865))
+
+
+
 <a name="1.2.0"></a>
 # 1.2.0 (2018-02-23)
 
