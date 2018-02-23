@@ -33,12 +33,12 @@ class NanoClamp extends Component {
 
   debounce (func) {
     let timeout
+    const later = () => {
+      timeout = null
+      func.apply(this)
+    }
 
     return () => {
-      const later = () => {
-        timeout = null
-        func.apply(this)
-      }
       const callNow = !timeout
       clearTimeout(timeout)
       timeout = setTimeout(later, this.props.debounce)
@@ -51,34 +51,30 @@ class NanoClamp extends Component {
   }
 
   clampLines () {
-    const maxHeight = this.lineHeight * this.props.lines + 1
+    const {ellipsis, lines} = this.props
+    const maxHeight = this.lineHeight * lines + 1
+    const ellipsisLength = ellipsis === NanoClamp.defaultProps.ellipsis ? 5 : ellipsis.length * 1.2
 
     this.start = 0
     this.middle = 0
-    this.end = this.original.length
+    this.end = this.original.length - ellipsisLength
 
     while (this.start <= this.end) {
       this.middle = Math.floor((this.start + this.end) / 2)
       this.element.innerText = this.original.slice(0, this.middle)
 
       if (this.middle === this.original.length) {
-        this.setState({ text: this.original, noClamp: true })
+        this.setState({text: this.original, noClamp: true})
         return
       }
 
       this.moveMarkers(maxHeight)
     }
+    const text = this.original.slice(0, this.middle - ellipsisLength).trim() + ellipsis
 
-    this.setState(
-      () => {
-        const slicedString = this.original.slice(0, this.middle - 5)
-        const text = slicedString.trim() + this.props.ellipsis
-        return { text }
-      },
-      () => {
-        this.element.innerText = this.state.text
-      }
-    )
+    this.setState({text}, () => {
+      this.element.innerText = this.state.text
+    })
   }
 
   moveMarkers (maxHeight) {
@@ -87,12 +83,10 @@ class NanoClamp extends Component {
   }
 
   render () {
-    const {is, text: propText, lines, debounce, ellipsis, ...props} = this.props
     const {text} = this.state
-
-    return propText
-      ? createElement(is, { ref: node => (this.element = node), ...props }, text)
-      : null
+    const {is, text: propText, lines, debounce, ellipsis, ...props} = this.props
+    const clampProps = {ref: node => (this.element = node), ...props}
+    return propText ? createElement(is, clampProps, text) : null
   }
 }
 
