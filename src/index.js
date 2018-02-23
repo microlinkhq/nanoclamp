@@ -84,10 +84,8 @@ class NanoClamp extends Component {
 
   render () {
     const {text} = this.state
-    const {is, text: propText, ...props} = this.props
-
+    const {is, text: propText, lines, debounce, ellipsis, ...props} = this.props
     const clampProps = {ref: node => (this.element = node), ...props}
-
     return propText ? createElement(is, clampProps, text) : null
   }
 }
