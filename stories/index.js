@@ -55,9 +55,5 @@ storiesOf('NanoClamp', module)
     </Fragment>
   ))
   .add('with is prop', () => (
-    <Fragment>
-      {examples.map(({...props}) => (
-        <NanoClampWrap {...props} is="h1" />
-      ))}
-    </Fragment>
+    <Fragment>{examples.map(({...props}) => <NanoClampWrap {...props} is="h1" />)}</Fragment>
   ))
