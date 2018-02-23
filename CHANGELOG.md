@@ -1,3 +1,19 @@
+<a name="1.2.0"></a>
+# 1.2.0 (2018-02-23)
+
+* Avoid pass component props to children props ([f571af0](https://github.com/microlinkhq/nanoclamp/commit/f571af0))
+* Build lib ([562070d](https://github.com/microlinkhq/nanoclamp/commit/562070d))
+* Improve ellipsis size calculation ([67529c4](https://github.com/microlinkhq/nanoclamp/commit/67529c4))
+* Increase default debounce value ([271aa82](https://github.com/microlinkhq/nanoclamp/commit/271aa82))
+* Prettier storybook ([e3de8f5](https://github.com/microlinkhq/nanoclamp/commit/e3de8f5))
+* Refactor ([836e238](https://github.com/microlinkhq/nanoclamp/commit/836e238))
+* Refactor ([5a06ebd](https://github.com/microlinkhq/nanoclamp/commit/5a06ebd))
+* Update README ([5d83b67](https://github.com/microlinkhq/nanoclamp/commit/5d83b67))
+* Update storybook ([c6557b6](https://github.com/microlinkhq/nanoclamp/commit/c6557b6))
+* Update storybook styles ([bc58b06](https://github.com/microlinkhq/nanoclamp/commit/bc58b06))
+
+
+
 <a name="1.1.4"></a>
 ## 1.1.4 (2018-02-22)
 
