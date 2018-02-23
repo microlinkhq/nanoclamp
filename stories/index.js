@@ -14,7 +14,7 @@ const NanoClampWrap = ({background, width, ...props}) => (
       padding: 20,
       fontFamily: 'Helvetica, Arial, sans-serif',
       fontSize: 14,
-      lineHeight: '20px',
+      lineHeight: 1.25,
       background,
       color: 'white',
       boxSizing: 'border-box'
@@ -57,7 +57,7 @@ storiesOf('NanoClamp', module)
   .add('with is prop', () => (
     <Fragment>
       {examples.map(({...props}) => (
-        <NanoClampWrap {...props} is="h1" style={{lineHeight: 1.25}} />
+        <NanoClampWrap {...props} is="h1" />
       ))}
     </Fragment>
   ))
