@@ -1,3 +1,11 @@
+<a name="1.2.4"></a>
+## 1.2.4 (2018-02-24)
+
+* Add `accessibility` prop ([04d9ecd](https://github.com/microlinkhq/nanoclamp/commit/04d9ecd))
+* Update README ([db5ad1c](https://github.com/microlinkhq/nanoclamp/commit/db5ad1c))
+
+
+
 <a name="1.2.1"></a>
 ## <small>1.2.1 (2018-02-23)</small>
 
