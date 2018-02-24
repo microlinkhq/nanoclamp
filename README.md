@@ -33,6 +33,7 @@ import NanoClamp from 'nanoclamp';
 
 prop | type | default | description |
 -----|------|--------------------|-------------|
+accessibility | `boolean` | `true` | Pass the full _unclamped_ string to the DOM element's `title` attribute
 className | `string` |  | CSS classname(s) added to the string
 debounce | `number` | `300` | Time in milliseconds used for debounce
 ellipsis | `string` | `'…'` | String displayed after the clamped `text`
