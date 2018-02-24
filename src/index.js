@@ -84,13 +84,18 @@ class NanoClamp extends Component {
 
   render () {
     const {text} = this.state
-    const {is, text: propText, lines, debounce, ellipsis, ...props} = this.props
-    const clampProps = {ref: node => (this.element = node), ...props}
+    const {accessibility, is, text: propText, lines, debounce, ellipsis, ...props} = this.props
+    const clampProps = {
+      ref: node => (this.element = node),
+      ...(accessibility ? {title: propText} : {}),
+      ...props
+    }
     return propText ? createElement(is, clampProps, text) : null
   }
 }
 
 NanoClamp.defaultProps = {
+  accessibility: true,
   is: 'div',
   lines: 3,
   ellipsis: '…',
@@ -98,6 +103,7 @@ NanoClamp.defaultProps = {
 }
 
 NanoClamp.propTypes = {
+  accessibility: PropTypes.boolean,
   is: PropTypes.string,
   lines: PropTypes.number,
   debounce: PropTypes.number,
