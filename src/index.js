@@ -103,7 +103,7 @@ NanoClamp.defaultProps = {
 }
 
 NanoClamp.propTypes = {
-  accessibility: PropTypes.boolean,
+  accessibility: PropTypes.bool,
   is: PropTypes.string,
   lines: PropTypes.number,
   debounce: PropTypes.number,
