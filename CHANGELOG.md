@@ -1,3 +1,11 @@
+<a name="1.2.5"></a>
+## 1.2.5 (2018-03-09)
+
+* Fix `accessibility` prop’s `propType` ([f1c799b](https://github.com/microlinkhq/nanoclamp/commit/f1c799b))
+* Fix README license ([df06bd2](https://github.com/microlinkhq/nanoclamp/commit/df06bd2))
+
+
+
 <a name="1.2.4"></a>
 ## 1.2.4 (2018-02-24)
 
