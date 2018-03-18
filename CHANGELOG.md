@@ -1,3 +1,11 @@
+<a name="1.2.6"></a>
+## 1.2.6 (2018-03-18)
+
+* Add prepublish script ([85aa87f](https://github.com/microlinkhq/nanoclamp/commit/85aa87f))
+* Check for `this.original` before clamping lines ([e415f02](https://github.com/microlinkhq/nanoclamp/commit/e415f02))
+
+
+
 <a name="1.2.5"></a>
 ## 1.2.5 (2018-03-09)
 
