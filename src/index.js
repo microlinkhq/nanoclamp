@@ -47,7 +47,9 @@ class NanoClamp extends Component {
   }
 
   action () {
-    this.setState({noClamp: false}, this.clampLines)
+    if (this.original) {
+      this.setState({noClamp: false}, this.clampLines)
+    }
   }
 
   clampLines () {
