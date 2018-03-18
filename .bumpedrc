@@ -5,9 +5,6 @@ plugins:
     Linting config files:
       plugin: bumped-finepack
   postrelease:
-    Generating build:
-      plugin: bumped-terminal
-      command: 'npm run build'
     Generating CHANGELOG file:
       plugin: bumped-changelog
     Committing new version:
