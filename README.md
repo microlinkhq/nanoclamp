@@ -23,7 +23,7 @@ import NanoClamp from 'nanoclamp';
 <NanoClamp
   className="custom-class"
   is="p"
-  lines="4"
+  lines={2}
   text={'Some text to clamp.'}
 />
 
