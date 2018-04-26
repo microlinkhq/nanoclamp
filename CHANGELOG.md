@@ -1,3 +1,13 @@
+<a name="1.2.7"></a>
+## 1.2.7 (2018-04-26)
+
+* prepublish → prepublishOnly ([6ed7e7d](https://github.com/microlinkhq/nanoclamp/commit/6ed7e7d))
+* Remove unnecessary build step ([6deff03](https://github.com/microlinkhq/nanoclamp/commit/6deff03))
+* Update browser targets ([aefb9e8](https://github.com/microlinkhq/nanoclamp/commit/aefb9e8))
+* Update README.md ([112fcf8](https://github.com/microlinkhq/nanoclamp/commit/112fcf8))
+
+
+
 <a name="1.2.6"></a>
 ## 1.2.6 (2018-03-18)
 
