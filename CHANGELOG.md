@@ -1,3 +1,12 @@
+<a name="1.2.9"></a>
+## 1.2.9 (2019-03-07)
+
+* Add Typescript types ([4da4c75](https://github.com/microlinkhq/nanoclamp/commit/4da4c75))
+* migrate hooks ([85c6659](https://github.com/microlinkhq/nanoclamp/commit/85c6659))
+* Release 1.2.8 ([e684ded](https://github.com/microlinkhq/nanoclamp/commit/e684ded))
+
+
+
 <a name="1.2.8"></a>
 ## 1.2.8 (2019-03-07)
 
