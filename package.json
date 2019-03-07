@@ -2,10 +2,9 @@
   "name": "nanoclamp",
   "description": "Responsive text clamping component for React",
   "homepage": "https://github.com/microlinkhq/nanoclamp",
-  "version": "1.2.7",
+  "version": "1.2.8",
   "main": "lib/index.js",
   "module": "lib/index.m.js",
-  "typings": "typings/index.d.ts",
   "author": {
     "name": "Brad Adams"
   },
@@ -96,5 +95,6 @@
     "plugins": [
       "jsx-a11y"
     ]
-  }
+  },
+  "typings": "typings/index.d.ts"
 }
