@@ -1,3 +1,10 @@
+<a name="1.2.10"></a>
+## 1.2.10 (2019-04-25)
+
+* build: update workflow ([2a48887](https://github.com/microlinkhq/nanoclamp/commit/2a48887))
+
+
+
 <a name="1.2.9"></a>
 ## 1.2.9 (2019-03-07)
 
