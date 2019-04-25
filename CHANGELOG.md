@@ -1,3 +1,10 @@
+<a name="1.2.11"></a>
+## 1.2.11 (2019-04-25)
+
+* build: fix meta ([64b2c45](https://github.com/microlinkhq/nanoclamp/commit/64b2c45))
+
+
+
 <a name="1.2.10"></a>
 ## 1.2.10 (2019-04-25)
 
