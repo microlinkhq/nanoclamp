@@ -3,8 +3,8 @@
   "description": "Responsive text clamping component for React",
   "homepage": "https://github.com/microlinkhq/nanoclamp",
   "version": "1.2.9",
-  "main": "lib/index.js",
-  "module": "lib/index.m.js",
+  "main": "dist/nanoclamp.js",
+  "module": "dist/nanoclamp.m.js",
   "author": {
     "name": "Brad Adams"
   },
@@ -25,16 +25,7 @@
   ],
   "devDependencies": {
     "@storybook/react": "latest",
-    "babel-cli": "latest",
     "babel-eslint": "latest",
-    "babel-plugin-transform-class-properties": "latest",
-    "babel-plugin-transform-object-rest-spread": "latest",
-    "babel-plugin-transform-react-constant-elements": "latest",
-    "babel-plugin-transform-react-inline-elements": "latest",
-    "babel-plugin-transform-react-pure-class-to-function": "latest",
-    "babel-plugin-transform-react-remove-prop-types": "latest",
-    "babel-preset-env": "latest",
-    "babel-preset-react": "latest",
     "eslint-plugin-jsx-a11y": "latest",
     "husky": "latest",
     "lint-staged": "latest",
@@ -53,10 +44,8 @@
     "lib"
   ],
   "scripts": {
-    "build": "npm run build:babel && npm run build:microbundle",
+    "build": "NODE_ENV=production microbundle build -o dist --no-compress --no-sourcemap",
     "build-storybook": "NODE_ENV=production build-storybook",
-    "build:babel": "NODE_ENV=production BABEL_ENV=production babel src -d lib",
-    "build:microbundle": "NODE_ENV=production microbundle build --target browser --entry lib/index.js --format es,cjs",
     "dev": "start-storybook -p 6006",
     "lint": "standard-markdown && standard src stories",
     "prepublishOnly": "npm run build",
@@ -89,12 +78,13 @@
       "fetch"
     ],
     "ignore": [
-      "/lib/"
+      "/dist/"
     ],
     "parser": "babel-eslint",
     "plugins": [
       "jsx-a11y"
     ]
   },
-  "typings": "typings/index.d.ts"
+  "typings": "typings/index.d.ts",
+  "umd:main": "dist/nanoclamp.umd.js"
 }

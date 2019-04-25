@@ -1,4 +1,4 @@
-import {createElement, Component} from 'react'
+import { createElement, Component } from 'react'
 import PropTypes from 'prop-types'
 
 class NanoClamp extends Component {
@@ -48,12 +48,12 @@ class NanoClamp extends Component {
 
   action () {
     if (this.original) {
-      this.setState({noClamp: false}, this.clampLines)
+      this.setState({ noClamp: false }, this.clampLines)
     }
   }
 
   clampLines () {
-    const {ellipsis, lines} = this.props
+    const { ellipsis, lines } = this.props
     const maxHeight = this.lineHeight * lines + 1
     const ellipsisLength = ellipsis === NanoClamp.defaultProps.ellipsis ? 5 : ellipsis.length * 1.2
 
@@ -66,7 +66,7 @@ class NanoClamp extends Component {
       this.element.innerText = this.original.slice(0, this.middle)
 
       if (this.middle === this.original.length) {
-        this.setState({text: this.original, noClamp: true})
+        this.setState({ text: this.original, noClamp: true })
         return
       }
 
@@ -74,7 +74,7 @@ class NanoClamp extends Component {
     }
     const text = this.original.slice(0, Math.max(this.middle - ellipsisLength, 0)).trim() + ellipsis
 
-    this.setState({text}, () => {
+    this.setState({ text }, () => {
       this.element.innerText = this.state.text
     })
   }
@@ -85,11 +85,11 @@ class NanoClamp extends Component {
   }
 
   render () {
-    const {text} = this.state
-    const {accessibility, is, text: propText, lines, debounce, ellipsis, ...props} = this.props
+    const { text } = this.state
+    const { accessibility, is, text: propText, lines, debounce, ellipsis, ...props } = this.props
     const clampProps = {
       ref: node => (this.element = node),
-      ...(accessibility ? {title: propText} : {}),
+      ...(accessibility ? { title: propText } : {}),
       ...props
     }
     return propText ? createElement(is, clampProps, text) : null
