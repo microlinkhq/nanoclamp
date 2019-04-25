@@ -41,7 +41,7 @@
     "node": ">= 8"
   },
   "files": [
-    "lib"
+    "dist"
   ],
   "scripts": {
     "build": "NODE_ENV=production microbundle build -o dist --no-compress --no-sourcemap",
