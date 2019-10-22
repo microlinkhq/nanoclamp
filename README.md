@@ -1,4 +1,6 @@
-# nanoclamp 🗜
+<div align="center">
+  <img src="https://cdn.microlink.io/logo/banner.png" alt="microlink">
+</div>
 
 [![Last version](https://img.shields.io/github/tag/microlinkhq/nanoclamp.svg?style=flat-square)](https://github.com/microlinkhq/nanoclamp/releases)
 [![Build Status](https://img.shields.io/travis/microlinkhq/nanoclamp/master.svg?style=flat-square)](https://travis-ci.org/microlinkhq/nanoclamp)
@@ -15,8 +17,8 @@
 npm install nanoclamp --save
 ```
 
-
 ## Usage
+
 ```jsx
 import NanoClamp from 'nanoclamp';
 
@@ -26,7 +28,6 @@ import NanoClamp from 'nanoclamp';
   lines={2}
   text={'Some text to clamp.'}
 />
-
 ```
 
 ## API
