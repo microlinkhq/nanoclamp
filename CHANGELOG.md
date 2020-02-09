@@ -1,3 +1,9 @@
+## <small>1.3.2 (2020-02-09)</small>
+
+* build: ensure to don't add babel helpers ([8af3a39](https://github.com/microlinkhq/nanoclamp/commit/8af3a39))
+
+
+
 ## <small>1.3.1 (2020-02-09)</small>
 
 * fix: typo ([1f4b1ca](https://github.com/microlinkhq/nanoclamp/commit/1f4b1ca))
