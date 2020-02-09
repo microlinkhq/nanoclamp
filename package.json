@@ -34,14 +34,20 @@
     "babel-eslint": "latest",
     "babel-loader": "latest",
     "babel-plugin-transform-react-pure-class-to-function": "latest",
+    "babel-plugin-transform-react-remove-prop-types": "latest",
     "eslint-plugin-jsx-a11y": "latest",
     "husky": "latest",
     "lint-staged": "latest",
-    "microbundle": "latest",
     "prettier-standard": "latest",
     "prop-types": "latest",
     "react": "^16",
     "react-dom": "^16",
+    "rollup": "latest",
+    "rollup-plugin-babel": "latest",
+    "rollup-plugin-filesize": "latst",
+    "rollup-plugin-peer-deps-external": "latest",
+    "rollup-plugin-terser": "latest",
+    "rollup-plugin-visualizer": "latest",
     "standard": "latest",
     "standard-markdown": "latest"
   },
@@ -52,7 +58,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "NODE_ENV=production microbundle build -o dist --no-compress --no-sourcemap",
+    "build": "NODE_ENV=production rollup -c rollup.config.js",
     "build-storybook": "NODE_ENV=production build-storybook",
     "dev": "start-storybook -p 6006",
     "lint": "standard-markdown && standard src stories",
@@ -90,6 +96,5 @@
       "jsx-a11y"
     ]
   },
-  "typings": "typings/index.d.ts",
-  "umd:main": "dist/nanoclamp.umd.js"
+  "typings": "typings/index.d.ts"
 }
