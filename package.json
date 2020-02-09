@@ -24,8 +24,16 @@
     "react"
   ],
   "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "latest",
+    "@babel/plugin-proposal-object-rest-spread": "latest",
+    "@babel/plugin-transform-react-constant-elements": "latest",
+    "@babel/plugin-transform-react-inline-elements": "latest",
+    "@babel/preset-env": "latest",
+    "@babel/preset-react": "latest",
     "@storybook/react": "latest",
     "babel-eslint": "latest",
+    "babel-loader": "latest",
+    "babel-plugin-transform-react-pure-class-to-function": "latest",
     "eslint-plugin-jsx-a11y": "latest",
     "husky": "latest",
     "lint-staged": "latest",
@@ -50,7 +58,6 @@
     "lint": "standard-markdown && standard src stories",
     "prepublishOnly": "npm run build",
     "pretest": "npm run lint",
-    "pretty": "prettier-standard index.js {core,test,bin}/**/*.js --single-quote",
     "test": "exit 0"
   },
   "license": "MIT",
@@ -61,12 +68,10 @@
   },
   "lint-staged": {
     "package.json": [
-      "finepack",
-      "git add"
+      "finepack"
     ],
     "*.js": [
-      "prettier-standard",
-      "git add"
+      "prettier-standard"
     ]
   },
   "peerDependencies": {
