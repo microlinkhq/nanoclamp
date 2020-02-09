@@ -34,6 +34,6 @@ export default {
     }),
     terser(),
     filesize(),
-    visualizer()
+    visualizer({ template: 'treemap' })
   ]
 }
