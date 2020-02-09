@@ -44,7 +44,7 @@
     "react-dom": "^16",
     "rollup": "latest",
     "rollup-plugin-babel": "latest",
-    "rollup-plugin-filesize": "latst",
+    "rollup-plugin-filesize": "latest",
     "rollup-plugin-peer-deps-external": "latest",
     "rollup-plugin-terser": "latest",
     "rollup-plugin-visualizer": "latest",
