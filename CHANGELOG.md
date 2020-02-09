@@ -1,3 +1,9 @@
+## <small>1.3.1 (2020-02-09)</small>
+
+* fix: typo ([1f4b1ca](https://github.com/microlinkhq/nanoclamp/commit/1f4b1ca))
+
+
+
 ## 1.3.0 (2020-02-09)
 
 * build: ignore common files ([be1692a](https://github.com/microlinkhq/nanoclamp/commit/be1692a))
