@@ -1,3 +1,12 @@
+## <small>1.2.12 (2020-02-09)</small>
+
+* build: update build system ([0350d9e](https://github.com/microlinkhq/nanoclamp/commit/0350d9e))
+* Update LICENSE ([97d91a9](https://github.com/microlinkhq/nanoclamp/commit/97d91a9))
+* Update README.md ([1b4790e](https://github.com/microlinkhq/nanoclamp/commit/1b4790e))
+* Update README.md ([4a95931](https://github.com/microlinkhq/nanoclamp/commit/4a95931))
+
+
+
 <a name="1.2.11"></a>
 ## 1.2.11 (2019-04-25)
 
