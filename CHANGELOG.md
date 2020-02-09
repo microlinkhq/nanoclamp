@@ -1,3 +1,10 @@
+## 1.3.0 (2020-02-09)
+
+* build: ignore common files ([be1692a](https://github.com/microlinkhq/nanoclamp/commit/be1692a))
+* build: use rollup instead of microbundle ([5f9ae77](https://github.com/microlinkhq/nanoclamp/commit/5f9ae77))
+
+
+
 ## <small>1.2.12 (2020-02-09)</small>
 
 * build: update build system ([0350d9e](https://github.com/microlinkhq/nanoclamp/commit/0350d9e))
