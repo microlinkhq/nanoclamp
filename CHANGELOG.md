@@ -1,3 +1,10 @@
+## <small>1.3.3 (2020-02-12)</small>
+
+* build: remove babel plugin ([1403676](https://github.com/microlinkhq/nanoclamp/commit/1403676))
+* build: tweaks ([df9509f](https://github.com/microlinkhq/nanoclamp/commit/df9509f))
+
+
+
 ## <small>1.3.2 (2020-02-09)</small>
 
 * build: ensure to don't add babel helpers ([8af3a39](https://github.com/microlinkhq/nanoclamp/commit/8af3a39))
