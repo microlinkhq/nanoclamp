@@ -1,3 +1,9 @@
+## <small>1.3.4 (2020-07-02)</small>
+
+* fix: add types into the npm bundle ([870d35d](https://github.com/microlinkhq/nanoclamp/commit/870d35d))
+
+
+
 ## <small>1.3.3 (2020-02-12)</small>
 
 * build: remove babel plugin ([1403676](https://github.com/microlinkhq/nanoclamp/commit/1403676))
