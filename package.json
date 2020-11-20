@@ -40,7 +40,7 @@
     "prettier-standard": "latest",
     "prop-types": "latest",
     "react": "^16",
-    "react-dom": "^16",
+    "react-dom": "^17",
     "rollup": "latest",
     "rollup-plugin-babel": "latest",
     "rollup-plugin-filesize": "latest",
@@ -81,7 +81,7 @@
     ]
   },
   "peerDependencies": {
-    "react": ">= 16 < 17"
+    "react": "^17"
   },
   "standard": {
     "globals": [
