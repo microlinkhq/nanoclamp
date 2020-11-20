@@ -1,3 +1,9 @@
+## 1.4.0 (2020-11-20)
+
+* build: update dependencies ([7c75175](https://github.com/microlinkhq/nanoclamp/commit/7c75175))
+
+
+
 ## <small>1.3.4 (2020-07-02)</small>
 
 * fix: add types into the npm bundle ([870d35d](https://github.com/microlinkhq/nanoclamp/commit/870d35d))
