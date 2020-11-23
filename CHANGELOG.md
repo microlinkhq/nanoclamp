@@ -1,3 +1,10 @@
+## <small>1.4.1 (2020-11-23)</small>
+
+* fix: linter ([2b7294f](https://github.com/microlinkhq/nanoclamp/commit/2b7294f))
+* build: upgrade react version ([c25d5b0](https://github.com/microlinkhq/nanoclamp/commit/c25d5b0))
+
+
+
 ## 1.4.0 (2020-11-20)
 
 * build: update dependencies ([7c75175](https://github.com/microlinkhq/nanoclamp/commit/7c75175))
