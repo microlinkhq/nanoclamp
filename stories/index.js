@@ -1,11 +1,11 @@
-import React, {Fragment} from 'react'
-import {storiesOf} from '@storybook/react'
+import React, { Fragment } from 'react'
+import { storiesOf } from '@storybook/react'
 import NanoClamp from '../src/index'
 
 const string =
   'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, dignissimos totam nam cumque ipsum autem placeat. Doloribus nesciunt id saepe quasi, quod, quis voluptatibus rerum at perspiciatis impedit ab nostrum.'
 
-const NanoClampWrap = ({background, width, ...props}) => (
+const NanoClampWrap = ({ background, width, ...props }) => (
   <div
     style={{
       width,
@@ -47,13 +47,27 @@ const examples = [
 
 storiesOf('NanoClamp', module)
   .add('default', () => (
-    <Fragment>{examples.map(({...props}) => <NanoClampWrap {...props} />)}</Fragment>
+    <>
+      {examples.map(({ ...props }) => (
+        <NanoClampWrap key={'default__' + JSON.stringify(props)} {...props} />
+      ))}
+    </>
   ))
   .add('with ellipsis prop', () => (
-    <Fragment>
-      {examples.map(({...props}) => <NanoClampWrap {...props} ellipsis=" [Read more...]" />)}
-    </Fragment>
+    <>
+      {examples.map(({ ...props }) => (
+        <NanoClampWrap
+          key={'ellipsis__' + JSON.stringify(props)}
+          {...props}
+          ellipsis=' [Read more...]'
+        />
+      ))}
+    </>
   ))
   .add('with is prop', () => (
-    <Fragment>{examples.map(({...props}) => <NanoClampWrap {...props} is="h1" />)}</Fragment>
+    <>
+      {examples.map(({ ...props }) => (
+        <NanoClampWrap key={'custom__' + JSON.stringify(props)} {...props} is='h1' />
+      ))}
+    </>
   ))
