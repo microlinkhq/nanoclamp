@@ -39,7 +39,7 @@
     "lint-staged": "latest",
     "prettier-standard": "latest",
     "prop-types": "latest",
-    "react": "^16",
+    "react": "^17",
     "react-dom": "^17",
     "rollup": "latest",
     "rollup-plugin-babel": "latest",
