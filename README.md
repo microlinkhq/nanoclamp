@@ -1,9 +1,10 @@
 <div align="center">
   <img src="https://cdn.microlink.io/logo/banner.png" alt="microlink">
+  <br>
+  <br>
 </div>
 
 [![Last version](https://img.shields.io/github/tag/microlinkhq/nanoclamp.svg?style=flat-square)](https://github.com/microlinkhq/nanoclamp/releases)
-[![Build Status](https://img.shields.io/travis/microlinkhq/nanoclamp/master.svg?style=flat-square)](https://travis-ci.org/microlinkhq/nanoclamp)
 [![NPM Status](https://img.shields.io/npm/dm/nanoclamp.svg?style=flat-square)](https://www.npmjs.org/package/nanoclamp)
 
 ###### [Storybook](https://nanoclamp.netlify.com/)
