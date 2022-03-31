@@ -40,7 +40,7 @@
     "prettier-standard": "latest",
     "prop-types": "latest",
     "react": "^18",
-    "react-dom": "^17",
+    "react-dom": "^18",
     "rollup": "latest",
     "rollup-plugin-babel": "latest",
     "rollup-plugin-filesize": "latest",
