@@ -1,106 +1,92 @@
-import { createElement, Component } from 'react'
+import { createElement, useRef, useEffect, useCallback } from 'react'
 import PropTypes from 'prop-types'
 
-class NanoClamp extends Component {
-  constructor (props) {
-    super(props)
+const DEFAULT_ELLIPSIS = '…'
+const DEFAULT_TEXT = '.'
 
-    this.state = {
-      noClamp: false,
-      text: '.'
-    }
-
-    this.element = null
-    this.original = props.text
-    this.lineHeight = 0
-    this.start = 0
-    this.middle = 0
-    this.end = 0
-    this.debounced = this.debounce(this.action)
+const debounceFn = (func, timeoutMs) => {
+  let timeout
+  const later = () => {
+    timeout = null
+    func()
   }
 
-  componentDidMount () {
-    window.addEventListener('resize', this.debounced)
-    if (this.props.text) {
-      this.lineHeight = this.element.clientHeight + 1
-      this.clampLines()
-    }
+  return () => {
+    const callNow = !timeout
+    clearTimeout(timeout)
+    timeout = setTimeout(later, timeoutMs)
+    if (callNow) func()
+  }
+}
+
+const NanoClamp = ({ accessibility, debounce, ellipsis, is, lines, text, ...props }) => {
+  const elementRef = useRef()
+  const textRef = useRef(DEFAULT_TEXT)
+
+  const clampProps = {
+    ref: elementRef,
+    ...(accessibility ? { title: text } : {}),
+    ...props
   }
 
-  componentWillUnmount () {
-    window.removeEventListener('resize', this.debounced)
-  }
+  const clampLines = useCallback(() => {
+    if (!text) return
 
-  debounce (func) {
-    let timeout
-    const later = () => {
-      timeout = null
-      func.apply(this)
+    const updateTextRefs = newText => {
+      textRef.current = newText
+      elementRef.current.innerText = newText
     }
 
-    return () => {
-      const callNow = !timeout
-      clearTimeout(timeout)
-      timeout = setTimeout(later, this.props.debounce)
-      if (callNow) func.apply(this)
-    }
-  }
+    updateTextRefs(DEFAULT_TEXT)
 
-  action () {
-    if (this.original) {
-      this.setState({ noClamp: false }, this.clampLines)
-    }
-  }
+    const lineHeight = elementRef.current.clientHeight + 1
+    const maxHeight = lineHeight * lines + 1
 
-  clampLines () {
-    const { ellipsis, lines } = this.props
-    const maxHeight = this.lineHeight * lines + 1
-    const ellipsisLength = ellipsis === NanoClamp.defaultProps.ellipsis ? 5 : ellipsis.length * 1.2
+    const ellipsisLength = ellipsis === DEFAULT_ELLIPSIS ? 5 : ellipsis.length * 1.2
 
-    this.start = 0
-    this.middle = 0
-    this.end = this.original.length
+    let start = 0
+    let middle = 0
+    let end = text.length
 
-    while (this.start <= this.end) {
-      this.middle = Math.floor((this.start + this.end) / 2)
-      this.element.innerText = this.original.slice(0, this.middle)
+    while (start <= end) {
+      middle = Math.floor((start + end) / 2)
 
-      if (this.middle === this.original.length) {
-        this.setState({ text: this.original, noClamp: true })
+      const slicedText = text.slice(0, middle)
+      updateTextRefs(slicedText)
+
+      if (middle === text.length) {
         return
       }
 
-      this.moveMarkers(maxHeight)
+      if (elementRef.current.clientHeight <= maxHeight) {
+        start = middle + 1
+      } else {
+        end = middle - 1
+      }
     }
-    const text = this.original.slice(0, Math.max(this.middle - ellipsisLength, 0)).trim() + ellipsis
 
-    this.setState({ text }, () => {
-      this.element.innerText = this.state.text
-    })
-  }
+    const textPlusEllipsis = text.slice(0, Math.max(middle - ellipsisLength, 0)).trim() + ellipsis
 
-  moveMarkers (maxHeight) {
-    if (this.element.clientHeight <= maxHeight) this.start = this.middle + 1
-    else this.end = this.middle - 1
-  }
+    updateTextRefs(textPlusEllipsis)
+  }, [ellipsis, lines, text])
 
-  render () {
-    const { text } = this.state
-    const { accessibility, is, text: propText, lines, debounce, ellipsis, ...props } = this.props
-    const clampProps = {
-      ref: node => (this.element = node),
-      ...(accessibility ? { title: propText } : {}),
-      ...props
-    }
-    return propText ? createElement(is, clampProps, text) : null
-  }
+  useEffect(() => {
+    clampLines()
+
+    const clampLinesDebounced = debounceFn(clampLines, debounce)
+    window.addEventListener('resize', clampLinesDebounced)
+
+    return () => window.removeEventListener('resize', clampLinesDebounced)
+  }, [clampLines, debounce])
+
+  return text ? createElement(is, clampProps, textRef.current) : null
 }
 
 NanoClamp.defaultProps = {
   accessibility: true,
   is: 'div',
   lines: 3,
-  ellipsis: '…',
+  ellipsis: DEFAULT_ELLIPSIS,
   debounce: 300
 }
 
