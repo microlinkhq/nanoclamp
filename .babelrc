@@ -2,8 +2,6 @@
   "env": {
     "production": {
       "plugins": [
-        ["transform-react-remove-prop-types", {"removeImport": true}],
-        "transform-react-pure-class-to-function",
         "@babel/plugin-transform-react-constant-elements"
       ]
     }
@@ -17,9 +15,5 @@
       ] }
     }],
     "@babel/preset-react"
-  ],
-  "plugins": [
-    "@babel/plugin-proposal-class-properties",
-    "@babel/plugin-proposal-object-rest-spread"
   ]
 }

@@ -24,29 +24,25 @@
     "react"
   ],
   "devDependencies": {
-    "@babel/plugin-proposal-class-properties": "latest",
-    "@babel/plugin-proposal-object-rest-spread": "latest",
+    "@babel/eslint-parser": "latest",
     "@babel/plugin-transform-react-constant-elements": "latest",
     "@babel/preset-env": "latest",
     "@babel/preset-react": "latest",
+    "@rollup/plugin-babel": "latest",
+    "@rollup/plugin-terser": "latest",
     "@storybook/react": "latest",
-    "babel-eslint": "latest",
     "babel-loader": "latest",
-    "babel-plugin-transform-react-pure-class-to-function": "latest",
-    "babel-plugin-transform-react-remove-prop-types": "latest",
-    "eslint-plugin-jsx-a11y": "latest",
-    "simple-git-hooks": "latest",
+    "html-webpack-plugin": "latest",
     "nano-staged": "latest",
     "prettier-standard": "latest",
     "prop-types": "latest",
     "react": "^18",
     "react-dom": "^18",
     "rollup": "latest",
-    "rollup-plugin-babel": "latest",
     "rollup-plugin-filesize": "latest",
     "rollup-plugin-peer-deps-external": "latest",
-    "rollup-plugin-terser": "latest",
     "rollup-plugin-visualizer": "latest",
+    "simple-git-hooks": "latest",
     "standard": "latest",
     "standard-markdown": "latest"
   },
@@ -58,41 +54,38 @@
     "typings"
   ],
   "scripts": {
-    "build": "NODE_ENV=production rollup -c rollup.config.js",
+    "build": "NODE_ENV=production rollup -c rollup.config.js --bundleConfigAsCjs",
     "build-storybook": "NODE_ENV=production build-storybook",
     "dev": "start-storybook -p 6006",
     "lint": "standard-markdown && standard src stories",
+    "prepare": "npx simple-git-hooks",
     "prepublishOnly": "npm run build",
     "pretest": "npm run lint",
     "test": "exit 0"
   },
   "license": "MIT",
-  "simple-git-hooks": {
-        "pre-commit": "nano-staged"
-  },
   "nano-staged": {
-    "package.json": [
-      "finepack"
-    ],
     "*.js": [
       "prettier-standard"
+    ],
+    "package.json": [
+      "finepack"
     ]
   },
   "peerDependencies": {
     "react": "^18"
   },
+  "simple-git-hooks": {
+    "pre-commit": "./node_modules/.bin/nano-staged"
+  },
   "standard": {
     "globals": [
-      "React",
-      "fetch"
+      "React"
     ],
     "ignore": [
       "/dist/"
     ],
-    "parser": "babel-eslint",
-    "plugins": [
-      "jsx-a11y"
-    ]
+    "parser": "@babel/eslint-parser"
   },
   "typings": "typings/index.d.ts"
 }

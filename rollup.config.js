@@ -1,8 +1,8 @@
 import external from 'rollup-plugin-peer-deps-external'
-import visualizer from 'rollup-plugin-visualizer'
-import { terser } from 'rollup-plugin-terser'
+import { visualizer } from 'rollup-plugin-visualizer'
+import terser from '@rollup/plugin-terser'
 import filesize from 'rollup-plugin-filesize'
-import babel from 'rollup-plugin-babel'
+import babel from '@rollup/plugin-babel'
 import fs from 'fs'
 
 import pkg from './package.json'
@@ -29,7 +29,7 @@ export default {
     }),
     babel({
       babelrc: false,
-      externalHelpers: false,
+      babelHelpers: 'inline',
       ...babelRc
     }),
     terser(),
