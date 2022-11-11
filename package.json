@@ -30,6 +30,8 @@
     "@babel/preset-react": "latest",
     "@rollup/plugin-babel": "latest",
     "@rollup/plugin-terser": "latest",
+    "@storybook/builder-webpack5": "latest",
+    "@storybook/manager-webpack5": "latest",
     "@storybook/react": "latest",
     "babel-loader": "latest",
     "html-webpack-plugin": "latest",
