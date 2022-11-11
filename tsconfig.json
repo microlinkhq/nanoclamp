@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "removeComments": false,
+    "sourceMap": true,
+    "target": "es2018",
+    "outDir": "dist",
+    "declaration": true,
+    "strict": true,
+    "module": "esnext",
+    "noEmitOnError": true,
+    "lib": ["dom", "es2017"],
+    "esModuleInterop": false
+  },
+  "include": ["src"]
+}

@@ -30,11 +30,13 @@
     "@babel/preset-react": "latest",
     "@rollup/plugin-babel": "latest",
     "@rollup/plugin-terser": "latest",
+    "@rollup/plugin-typescript": "latest",
     "@storybook/builder-webpack5": "latest",
     "@storybook/manager-webpack5": "latest",
     "@storybook/react": "latest",
+    "@types/react": "^18",
     "babel-loader": "latest",
-    "html-webpack-plugin": "latest",
+    "finepack": "latest",
     "nano-staged": "latest",
     "prettier-standard": "latest",
     "prop-types": "latest",
@@ -46,7 +48,9 @@
     "rollup-plugin-visualizer": "latest",
     "simple-git-hooks": "latest",
     "standard": "latest",
-    "standard-markdown": "latest"
+    "standard-markdown": "latest",
+    "ts-standard": "latest",
+    "typescript": "latest"
   },
   "engines": {
     "node": ">= 8"
@@ -59,7 +63,7 @@
     "build": "NODE_ENV=production rollup -c rollup.config.js --bundleConfigAsCjs",
     "build-storybook": "NODE_ENV=production build-storybook",
     "dev": "start-storybook -p 6006",
-    "lint": "standard-markdown && standard src stories",
+    "lint": "standard-markdown && ts-standard src && standard stories",
     "prepare": "npx simple-git-hooks",
     "prepublishOnly": "npm run build",
     "pretest": "npm run lint",
@@ -89,5 +93,5 @@
     ],
     "parser": "@babel/eslint-parser"
   },
-  "typings": "typings/index.d.ts"
+  "types": "dist/index.d.ts"
 }
