@@ -13,7 +13,7 @@ const DEFAULT_ELLIPSIS = '…'
 const DEFAULT_TEXT = '.'
 
 const debounceFn = (func: () => void, timeoutMs: number): () => void => {
-  let timeout: NodeJS.Timeout | undefined
+  let timeout: ReturnType<typeof setTimeout> | undefined
 
   const later = (): void => {
     timeout = undefined
@@ -27,7 +27,6 @@ const debounceFn = (func: () => void, timeoutMs: number): () => void => {
     if (callNow) func()
   }
 }
-
 
 const NanoClamp = ({
   accessibility = true,
