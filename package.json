@@ -74,6 +74,7 @@
     "rollup-plugin-visualizer": "latest",
     "simple-git-hooks": "latest",
     "standard-markdown": "latest",
+    "standard-version": "latest",
     "ts-standard": "latest",
     "typescript": "latest"
   },
