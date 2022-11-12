@@ -4,3 +4,4 @@ yarn.lock
 dist
 .envrc
 stats.html
+storybook-static
