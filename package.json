@@ -34,6 +34,7 @@
     "@storybook/builder-webpack5": "latest",
     "@storybook/manager-webpack5": "latest",
     "@storybook/react": "latest",
+    "@types/node": "latest",
     "@types/react": "^18",
     "babel-loader": "latest",
     "finepack": "latest",
