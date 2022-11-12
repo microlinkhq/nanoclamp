@@ -1,9 +1,23 @@
-## <small>1.4.1 (2020-11-23)</small>
+# Changelog
 
-* fix: linter ([2b7294f](https://github.com/microlinkhq/nanoclamp/commit/2b7294f))
-* build: upgrade react version ([c25d5b0](https://github.com/microlinkhq/nanoclamp/commit/c25d5b0))
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [2.0.0](https://github.com/microlinkhq/nanoclamp/compare/v1.2.3...v2.0.0) (2022-11-12)
 
 
+### Features
+
+* typescript ([620950e](https://github.com/microlinkhq/nanoclamp/commit/620950ef3c29f65fd0766240c187415b4673edcb))
+
+
+### Bug Fixes
+
+* add missing dependency ([1fca48b](https://github.com/microlinkhq/nanoclamp/commit/1fca48b8e7b843c55454e7d23d85f81d52cfb333))
+* add missing node types ([c4715d5](https://github.com/microlinkhq/nanoclamp/commit/c4715d5755caf24c83d2b75c63fd0e405e36da9f))
+* add types into the npm bundle ([870d35d](https://github.com/microlinkhq/nanoclamp/commit/870d35d5f36944ba51a039925f7157d5f09ab82e))
+* linter ([2b7294f](https://github.com/microlinkhq/nanoclamp/commit/2b7294fac26962016299bf82b6d47b49e7f5339f))
+* malformed yaml ([d0a3826](https://github.com/microlinkhq/nanoclamp/commit/d0a382625ca286753e92adbdd77bec0bdf610600))
+* typo ([1f4b1ca](https://github.com/microlinkhq/nanoclamp/commit/1f4b1ca2cac83ba5302f17e52b0826fd353c2d5a))
 
 ## 1.4.0 (2020-11-20)
 
@@ -233,6 +247,3 @@
 * url fixed for css and js ([b95b75d](https://github.com/microlinkhq/nanoclamp/commit/b95b75d))
 * Version bumped up in package.json ([1bd3539](https://github.com/microlinkhq/nanoclamp/commit/1bd3539))
 * version number updated to 1.0.0 ([419370e](https://github.com/microlinkhq/nanoclamp/commit/419370e))
-
-
-
