@@ -1,9 +1,13 @@
-## <small>1.4.1 (2020-11-23)</small>
+# Changelog
 
-* fix: linter ([2b7294f](https://github.com/microlinkhq/nanoclamp/commit/2b7294f))
-* build: upgrade react version ([c25d5b0](https://github.com/microlinkhq/nanoclamp/commit/c25d5b0))
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### 1.4.2 (2022-11-12)
 
 
+### Bug Fixes
+
+* add missing dependency ([1fca48b](https://github.com/microlinkhq/nanoclamp/commit/1fca48b8e7b843c55454e7d23d85f81d52cfb333))
 
 ## 1.4.0 (2020-11-20)
 
@@ -233,6 +237,3 @@
 * url fixed for css and js ([b95b75d](https://github.com/microlinkhq/nanoclamp/commit/b95b75d))
 * Version bumped up in package.json ([1bd3539](https://github.com/microlinkhq/nanoclamp/commit/1bd3539))
 * version number updated to 1.0.0 ([419370e](https://github.com/microlinkhq/nanoclamp/commit/419370e))
-
-
-
