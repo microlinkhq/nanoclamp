@@ -12,6 +12,18 @@
     {
       "name": "Kiko Beats",
       "email": "josefrancisco.verdu@gmail.com"
+    },
+    {
+      "name": "Brad Adams",
+      "email": "hi@breadadams.com"
+    },
+    {
+      "name": "Zoltan Toth",
+      "email": "ztoth@indigo.ca"
+    },
+    {
+      "name": "Axel Hernández Ferrera",
+      "email": "axelhzf@gmail.com"
     }
   ],
   "repository": {
@@ -84,7 +96,7 @@
     "postrelease": "npm run release:tags && npm run release:github && (ci-publish || npm publish --access=public)",
     "prepare": "npx simple-git-hooks",
     "prepublishOnly": "npm run build",
-    "prerelease": "npm run update:check && npm run contributors",
+    "prerelease": "npm run update:check && [[ -z \"${CI}\" ]] && npm run contributors || exit 0",
     "pretest": "npm run lint",
     "release": "standard-version -a",
     "release:github": "conventional-github-releaser -p angular",
