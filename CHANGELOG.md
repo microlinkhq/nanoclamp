@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 2.0.2 (2022-11-13)
+
+
+### Bug Fixes
+
+* avoid run contributors on CI ([4c591b7](https://github.com/microlinkhq/nanoclamp/commit/4c591b72b3bc2a1c795d40790cf6d8f1507190c0))
+
 ### 2.0.1 (2022-11-13)
 
 ## [2.0.0](https://github.com/microlinkhq/nanoclamp/compare/v1.2.3...v2.0.0) (2022-11-12)
