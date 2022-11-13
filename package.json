@@ -2,7 +2,7 @@
   "name": "nanoclamp",
   "description": "Responsive text clamping component for React",
   "homepage": "https://github.com/microlinkhq/nanoclamp",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "main": "dist/nanoclamp.js",
   "module": "dist/nanoclamp.mjs",
   "author": {
