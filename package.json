@@ -94,6 +94,7 @@
     "dev": "start-storybook -p 6006",
     "lint": "standard-markdown && ts-standard src && standard stories",
     "postrelease": "npm run release:tags && npm run release:github && (ci-publish || npm publish --access=public)",
+    "prebuild": "rm -rf dist",
     "prepare": "npx simple-git-hooks",
     "prepublishOnly": "npm run build",
     "prerelease": "npm run update:check && [[ -z \"${CI}\" ]] && npm run contributors || exit 0",
