@@ -2,7 +2,8 @@
   "env": {
     "production": {
       "plugins": [
-        "@babel/plugin-transform-react-constant-elements"
+        "@babel/plugin-transform-react-constant-elements",
+        "@babel/plugin-transform-runtime"
       ]
     }
   },
