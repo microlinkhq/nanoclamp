@@ -4,7 +4,7 @@
   "homepage": "https://github.com/microlinkhq/nanoclamp",
   "version": "2.0.0",
   "main": "dist/nanoclamp.js",
-  "module": "dist/nanoclamp.m.js",
+  "module": "dist/nanoclamp.mjs",
   "author": {
     "name": "Brad Adams"
   },
