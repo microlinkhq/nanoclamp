@@ -1,6 +1,6 @@
 import { createElement, useRef, useEffect, useCallback, useMemo } from 'react'
 
-interface Props {
+interface Props extends React.HTMLAttributes<HTMLElement> {
   accessibility?: boolean
   debounce?: number
   ellipsis?: string
@@ -36,7 +36,7 @@ const NanoClamp = ({
   lines = 3,
   text,
   ...props
-}: Props): JSX.Element | null => {
+}: Props): React.ReactElement | null => {
   const elementRef = useRef<HTMLElement>(null)
   const textRef = useRef<string>(DEFAULT_TEXT)
 
