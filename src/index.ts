@@ -55,16 +55,21 @@ const NanoClamp = ({
       textRef.current = newText
 
       if (elementRef.current != null) {
-        elementRef.current.innerText = newText
+        elementRef.current.textContent = newText
       }
     }
 
+    const elementHeight = (): number => elementRef.current?.clientHeight ?? 0
+
     updateTextRefs(DEFAULT_TEXT)
 
-    const lineHeight = (elementRef.current?.clientHeight ?? 0) + 1
+    const lineHeight = elementHeight() + 1
     const maxHeight = lineHeight * lines + 1
 
-    const ellipsisLength = ellipsis === DEFAULT_ELLIPSIS ? 5 : ellipsis.length * 1.2
+    updateTextRefs(text)
+    if (elementHeight() <= maxHeight) {
+      return
+    }
 
     let start = 0
     let middle = 0
@@ -73,21 +78,17 @@ const NanoClamp = ({
     while (start <= end) {
       middle = Math.floor((start + end) / 2)
 
-      const slicedText = text.slice(0, middle)
+      const slicedText = text.slice(0, middle).trim() + ellipsis
       updateTextRefs(slicedText)
 
-      if (middle === text.length) {
-        return
-      }
-
-      if ((elementRef.current?.clientHeight ?? 0) <= maxHeight) {
+      if (elementHeight() <= maxHeight) {
         start = middle + 1
       } else {
         end = middle - 1
       }
     }
 
-    const textPlusEllipsis = text.slice(0, Math.max(middle - ellipsisLength, 0)).trim() + ellipsis
+    const textPlusEllipsis = text.slice(0, middle - 1).trim() + ellipsis
 
     updateTextRefs(textPlusEllipsis)
   }, [ellipsis, hasText, lines, text])
