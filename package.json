@@ -51,6 +51,7 @@
     "@babel/runtime": "latest",
     "@commitlint/cli": "latest",
     "@commitlint/config-conventional": "latest",
+    "@ksmithut/prettier-standard": "latest",
     "@rollup/plugin-babel": "latest",
     "@rollup/plugin-terser": "latest",
     "@rollup/plugin-typescript": "latest",
@@ -62,12 +63,11 @@
     "@types/react": "^18",
     "babel-loader": "latest",
     "ci-publish": "latest",
-    "conventional-github-releaser": "latest",
     "finepack": "latest",
     "git-authors-cli": "latest",
+    "github-generate-release": "latest",
     "nano-staged": "latest",
     "npm-check-updates": "latest",
-    "prettier-standard": "latest",
     "prop-types": "latest",
     "react": "^18",
     "react-dom": "^18",
@@ -91,7 +91,7 @@
   "scripts": {
     "build": "NODE_ENV=production rollup -c rollup.config.js --bundleConfigAsCjs",
     "build-storybook": "NODE_ENV=production build-storybook",
-    "contributors": "(git-authors-cli && finepack && git add package.json && git commit -m 'build: contributors' --no-verify) || true",
+    "contributors": "(npx git-authors-cli && npx finepack && git add package.json && git commit -m 'build: contributors' --no-verify) || true",
     "dev": "start-storybook -p 6006",
     "lint": "standard-markdown && ts-standard src && standard stories",
     "postrelease": "npm run release:tags && npm run release:github && (ci-publish || npm publish --access=public)",
@@ -101,7 +101,7 @@
     "prerelease": "npm run update:check && [[ -z \"${CI}\" ]] && npm run contributors || exit 0",
     "pretest": "npm run lint",
     "release": "standard-version -a",
-    "release:github": "conventional-github-releaser -p angular",
+    "release:github": "github-generate-release",
     "release:tags": "git push --follow-tags origin HEAD:master",
     "test": "exit 0",
     "update": "ncu -u",
@@ -114,8 +114,9 @@
     ]
   },
   "nano-staged": {
-    "*.js,!*.min.js,": [
-      "prettier-standard"
+    "*.js": [
+      "prettier-standard",
+      "standard --fix"
     ],
     "*.md": [
       "standard-markdown"
