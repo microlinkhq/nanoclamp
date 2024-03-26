@@ -93,7 +93,7 @@
     "build-storybook": "NODE_ENV=production build-storybook",
     "contributors": "(npx git-authors-cli && npx finepack && git add package.json && git commit -m 'build: contributors' --no-verify) || true",
     "dev": "start-storybook -p 6006",
-    "lint": "standard-markdown && ts-standard src && standard stories",
+    "lint": "standard-markdown && ts-standard src && ts-standard stories",
     "postrelease": "npm run release:tags && npm run release:github && (ci-publish || npm publish --access=public)",
     "prebuild": "rm -rf dist",
     "prepare": "npx simple-git-hooks",
