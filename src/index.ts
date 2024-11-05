@@ -1,4 +1,4 @@
-import { createElement, useRef, useEffect, useCallback, useMemo } from 'react'
+import { createElement, useCallback, useLayoutEffect, useMemo, useRef } from 'react'
 
 interface Props extends React.HTMLAttributes<HTMLElement> {
   accessibility?: boolean
@@ -93,13 +93,14 @@ const NanoClamp = ({
     updateTextRefs(textPlusEllipsis)
   }, [ellipsis, hasText, lines, text])
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     clampLines()
 
-    const clampLinesDebounced = debounceFn(clampLines, debounce)
-    window.addEventListener('resize', clampLinesDebounced)
+    if (elementRef.current == null) return
 
-    return () => window.removeEventListener('resize', clampLinesDebounced)
+    const observer = new ResizeObserver(debounceFn(clampLines, debounce))
+    observer.observe(elementRef.current)
+    return () => observer.disconnect()
   }, [clampLines, debounce])
 
   return hasText ? createElement(is, clampProps, textRef.current) : null
