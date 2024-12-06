@@ -69,7 +69,7 @@
     "nano-staged": "latest",
     "npm-check-updates": "latest",
     "prop-types": "latest",
-    "react": "^18",
+    "react": "^19",
     "react-dom": "^18",
     "rollup": "latest",
     "rollup-plugin-filesize": "latest",
@@ -126,7 +126,7 @@
     ]
   },
   "peerDependencies": {
-    "react": "^18"
+    "react": "^19"
   },
   "simple-git-hooks": {
     "commit-msg": "npx commitlint --edit",
