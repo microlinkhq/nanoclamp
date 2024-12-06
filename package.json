@@ -60,7 +60,7 @@
     "@storybook/manager-webpack5": "latest",
     "@storybook/react": "latest",
     "@storybook/theming": "latest",
-    "@types/react": "^18",
+    "@types/react": "^19",
     "babel-loader": "latest",
     "ci-publish": "latest",
     "finepack": "latest",
