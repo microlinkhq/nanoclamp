@@ -70,7 +70,7 @@
     "npm-check-updates": "latest",
     "prop-types": "latest",
     "react": "^19",
-    "react-dom": "^18",
+    "react-dom": "^19",
     "rollup": "latest",
     "rollup-plugin-filesize": "latest",
     "rollup-plugin-peer-deps-external": "latest",
