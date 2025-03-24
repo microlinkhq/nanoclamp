@@ -67,7 +67,6 @@
     "git-authors-cli": "latest",
     "github-generate-release": "latest",
     "nano-staged": "latest",
-    "npm-check-updates": "latest",
     "prop-types": "latest",
     "react": "^19",
     "react-dom": "^19",
@@ -103,15 +102,18 @@
     "release": "standard-version -a",
     "release:github": "github-generate-release",
     "release:tags": "git push --follow-tags origin HEAD:master",
-    "test": "exit 0",
-    "update": "ncu -u",
-    "update:check": "ncu -- --error-level 2"
+    "test": "exit 0"
   },
   "license": "MIT",
   "commitlint": {
     "extends": [
       "@commitlint/config-conventional"
-    ]
+    ],
+    "rules": {
+      "body-max-line-length": [
+        0
+      ]
+    }
   },
   "nano-staged": {
     "*.js": [
