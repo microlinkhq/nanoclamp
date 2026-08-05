@@ -1,6 +1,6 @@
 {
   "name": "nanoclamp",
-  "description": "Responsive text clamping component for React",
+  "description": "React component for clamping multiline text with an ellipsis — tiny and CSS-friendly.",
   "homepage": "https://github.com/microlinkhq/nanoclamp",
   "version": "2.0.20",
   "types": "dist/index.d.ts",
@@ -36,11 +36,15 @@
   },
   "keywords": [
     "clamp",
-    "clamping",
-    "components",
+    "component",
     "ellipsis",
     "lines",
-    "react"
+    "multiline",
+    "overflow",
+    "react",
+    "text",
+    "truncate",
+    "ui"
   ],
   "devDependencies": {
     "@babel/eslint-parser": "latest",
@@ -51,7 +55,6 @@
     "@babel/runtime": "latest",
     "@commitlint/cli": "latest",
     "@commitlint/config-conventional": "latest",
-    "@ksmithut/prettier-standard": "latest",
     "@rollup/plugin-babel": "latest",
     "@rollup/plugin-terser": "latest",
     "@rollup/plugin-typescript": "latest",
@@ -117,7 +120,7 @@
   },
   "nano-staged": {
     "*.js": [
-      "prettier-standard",
+      "npx @kikobeats/prettier-standard",
       "standard --fix"
     ],
     "*.md": [
